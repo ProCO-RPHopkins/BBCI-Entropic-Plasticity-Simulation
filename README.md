@@ -33,8 +33,8 @@
     external stimulation, BBCIs can potentially facilitate neuroplasticity and create new neural pathways.
 
     However, current models lack integration with frameworks that enhance neuroplasticity further, such as those inspired
-    by the entropic brain hypothesis related to psychedelics. Increased neural entropy may make the brain more receptive to rewiring,
-    yet this aspect remains underexplored in BBCI systems.
+    by the entropic brain hypothesis related to psychedelics. Increased neural entropy may make the brain more receptive to
+    rewiring, yet this aspect remains underexplored in BBCI systems.
 
     How can we design a simplified model to simulate a bidirectional brain-computer interface (BBCI) that can interpret neural
     activity and guide it to enhance neuroplasticity?
@@ -48,11 +48,11 @@
     individuals with ASD or similar neurodevelopmental conditions.
 
     In the context of a BBCI, we are interested in understanding how neural activity can be interpreted and guided to enhance 
-    neuroplasticity. We aim to develop a simplified model that can simulate the behavior of the brain-computer interface and incorporate
-    the concept of entropic brain theory to enhance neural malleability. The model should be able to decode neural activity 
-    patterns, recognize intent, and guide neural activity through stimulation to promote neuroplasticity. By simulating the 
-    interactions between neural activity, stimulation, and plasticity, we can explore how a bidirectional brain-computer interface
-    might function and how it could be used to enhance cognitive abilities and learning processes.
+    neuroplasticity. We aim to develop a simplified model that can simulate the behavior of the brain-computer interface and
+    incorporate the concept of entropic brain theory to enhance neural malleability. The model should be able to decode neural
+    activity patterns, recognize intent, and guide neural activity through stimulation to promote neuroplasticity. By simulating
+    the interactions between neural activity, stimulation, and plasticity, we can explore how a bidirectional brain-computer
+    interface might function and how it could be used to enhance cognitive abilities and learning processes.
 
 ## Methods
 
@@ -72,8 +72,8 @@
 
     3. Intent Recognition with Machine Learning - A feedforward neural network was trained to classify intent based on the neural
     activity of both regions. Inter-regional activity patterns were combined to assess connectivity and train the model:
-        * Data Preparation: A feedforward neural network was trained to classify intent based on the neural activity of both regions.
-        Inter-regional activity patterns were combined to assess connectivity and train the model:
+        * Data Preparation: A feedforward neural network was trained to classify intent based on the neural activity of both
+        regions. Inter-regional activity patterns were combined to assess connectivity and train the model:
         * Model Architecture:
             * Input Layer - 10 neurons (representing neural firing rates).
             * Hidden Layer - 16 neurons with ReLU activation.
@@ -88,8 +88,8 @@
     implemented to guide neural activity and reduce hemispheric isolation by promoting synchronization between regions:
         * Stimulation of underactive neurons - Neurons in Region 2 with firing rates below a threshold (0.3) were selectively
         augmented by adding a 0.5 increase to their activity.
-        * Synchronization - Neural activity in Region 2 was dynamically adjusted to move closer to the firing patterns of Region 1. This
-        step simulated the effects of BBCI-driven inter-regional connectivity.
+        * Synchronization - Neural activity in Region 2 was dynamically adjusted to move closer to the firing patterns of Region 1.
+        This step simulated the effects of BBCI-driven inter-regional connectivity.
         * Output - Synchronized datasets for Region 1 and Region 2, representing enhanced inter-hemispheric communication.
 
     5. Visualization and Data Analysis - The neural activity datasets were visualized and analyzed to illustrate changes resulting
@@ -134,10 +134,11 @@
     interventions for ASD.
 
     Future Research - The current implementation of the BBCI framework can be extended to simulate more complex neural systems,
-    incorporate more advanced machine learning algorithms, and explore the potential for neural modulation in various brain regions.
-    Future work could focus on enhancing the model's accuracy and robustness by integrating additional neural data sources,
+    incorporate more advanced machine learning algorithms, and explore the potential for neural modulation in various brain
+    regions. Future work could focus on enhancing the model's accuracy and robustness by integrating additional neural data sources,
     such as EEG or fMRI, and employing deep learning techniques like convolutional neural networks (CNNs) or recurrent neural
     networks (RNNs). Furthermore, exploring the impact of different neural connectivity patterns and their role in cognitive
     functions could provide deeper insights. Additionally, ongoing research in neuroplasticity, neurodegenerative disorders,
-    and cognitive enhancement can benefit from the insights gained through this study, particularly by applying the model to predict
-    disease progression, develop personalized treatment plans, and design brain-computer interfaces for therapeutic interventions.
+    and cognitive enhancement can benefit from the insights gained through this study, particularly by applying the model to
+    predict disease progression, develop personalized treatment plans, and design brain-computer interfaces for therapeutic
+    interventions.
