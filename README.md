@@ -2,7 +2,12 @@
 
 ## Overview
 
-    Simplified model to simulate how a bidirectional brain-computer interface (BBCI) might interpret and guide neural activity, incorporating the concept of entropic brain theory to enhance neuroplasticity. This model aims to address challenges associated with autism spectrum disorder (ASD), which often involves atypical neural activity patterns such as hemispheric isolation and underdeveloped neural connectivity.
+    Simplified model to simulate how a bidirectional brain-computer interface (BBCI)
+    might interpret and guide neural activity, incorporating the concept of entropic
+    brain theory to enhance neuroplasticity. This model aims to address challenges
+    associated with autism spectrum disorder (ASD), which often involves atypical
+    neural activity patterns such as hemispheric isolation and underdeveloped neural
+    connectivity.
 
 ## Key competencies
 
@@ -35,41 +40,41 @@
 ## Methods
 
     1. Simulation of Neural Activity - Neural activity was simulated as a time series representing the firing rates of neurons in two brain regions. Hemispheric isolation was introduced by reducing the correlation between regions while maintaining temporal correlation within each region. The activity was initialized as a zero matrix and evolved over time using random perturbations:
-        + Parameters - 100 time steps, 10 neurons per region.
-        + Output - Two datasets representing neural activity for Region 1 and Region 2, with weak connectivity between regions to model hemispheric isolation.
+        * Parameters - 100 time steps, 10 neurons per region.
+        * Output - Two datasets representing neural activity for Region 1 and Region 2, with weak connectivity between regions to model hemispheric isolation.
 
     2. Enhanced Neural Malleability Using Entropy - To simulate the effects of increased neural plasticity (e.g., influenced by psychedelics or entropic brain states), a custom entropy function was applied to the neural activity of Region 2. The function amplified random perturbations, introducing variability in the firing rates:
-        + Entropy Level - Adjustable parameter (default set to 0.3).
-        + Purpose - Modeled the enhanced neural malleability necessary for synaptic rewiring, aligning with the entropic brain theory.
+        * Entropy Level - Adjustable parameter (default set to 0.3).
+        * Purpose - Modeled the enhanced neural malleability necessary for synaptic rewiring, aligning with the entropic brain theory.
 
     3. Intent Recognition with Machine Learning - A feedforward neural network was trained to classify intent based on the neural activity of both regions. Inter-regional activity patterns were combined to assess connectivity and train the model:
-        + Data Preparation: A feedforward neural network was trained to classify intent based on the neural activity of both regions. Inter-regional activity patterns were combined to assess connectivity and train the model:
-        + Model Architecture:
-            + Input Layer - 10 neurons (representing neural firing rates).
-            + Hidden Layer - 16 neurons with ReLU activation.
-            + Output Layer - 2 neurons with softmax activation for classification.
-        + Training Parameters:
-            + Loss Function - Logit cross-entropy.
-            + Optimizer - Gradient Descent (learning rate = 0.01).
-            + Epochs - 100 iterations.
-        + Output: A trained model capable of decoding neural intent based on input activity.
+        * Data Preparation: A feedforward neural network was trained to classify intent based on the neural activity of both regions. Inter-regional activity patterns were combined to assess connectivity and train the model:
+        * Model Architecture:
+            * Input Layer - 10 neurons (representing neural firing rates).
+            * Hidden Layer - 16 neurons with ReLU activation.
+            * Output Layer - 2 neurons with softmax activation for classification.
+        * Training Parameters:
+            * Loss Function - Logit cross-entropy.
+            * Optimizer - Gradient Descent (learning rate = 0.01).
+            * Epochs - 100 iterations.
+        * Output: A trained model capable of decoding neural intent based on input activity.
 
     4. Neural Modulation via Stimulation and Synchronization - To demonstrate bidirectional control, a stimulation function was implemented to guide neural activity and reduce hemispheric isolation by promoting synchronization between regions:
-        + Stimulation of underactive neurons - Neurons in Region 2 with firing rates below a threshold (0.3) were selectively augmented by adding a 0.5 increase to their activity.
-        + Synchronization - Neural activity in Region 2 was dynamically adjusted to move closer to the firing patterns of Region 1. This step simulated the effects of BBCI-driven inter-regional connectivity.
-        + Output - Synchronized datasets for Region 1 and Region 2, representing enhanced inter-hemispheric communication.
+        * Stimulation of underactive neurons - Neurons in Region 2 with firing rates below a threshold (0.3) were selectively augmented by adding a 0.5 increase to their activity.
+        * Synchronization - Neural activity in Region 2 was dynamically adjusted to move closer to the firing patterns of Region 1. This step simulated the effects of BBCI-driven inter-regional connectivity.
+        * Output - Synchronized datasets for Region 1 and Region 2, representing enhanced inter-hemispheric communication.
 
     5. Visualization and Data Analysis - The neural activity datasets were visualized and analyzed to illustrate changes resulting from entropy application and stimulation:
-        + Plots:
-            + Time-series plots compared original neural activity to activity after entropy amplification and stimulation.
-            + Visualization of synchronization effects across regions.
-        + Data Export: Results were saved as a CSV file for further analysis using the DataFrames.jl and CSV.jl libraries.
+        * Plots:
+            * Time-series plots compared original neural activity to activity after entropy amplification and stimulation.
+            * Visualization of synchronization effects across regions.
+        * Data Export: Results were saved as a CSV file for further analysis using the DataFrames.jl and CSV.jl libraries.
 
     6. Implementation Environment - The project was implemented in Julia using Jupyter Notebook. The following libraries were employed:
-        + Plots.jl: Visualization of neural activity.
-        + Flux.jl: Machine learning model development.
-        + Random.jl: Neural activity simulation.
-        + DataFrames.jl and CSV.jl: Data handling and export.
+        * Plots.jl: Visualization of neural activity.
+        * Flux.jl: Machine learning model development.
+        * Random.jl: Neural activity simulation.
+        * DataFrames.jl and CSV.jl: Data handling and export.
 
 ## Results
 
