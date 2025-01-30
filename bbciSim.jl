@@ -1,8 +1,8 @@
 # Simulating Neural Connectivity and Entropic Modulation: A BBCI Framework for Enhancing Hemispheric Integration in Autism Spectrum Disorder
 
 # Required libraries for project
-using Pkg
-Pkg.add(["Plots", "Flux", "Random", "DataFrames", "CSV"])
+# using Pkg
+# Pkg.add(["Plots", "Flux", "Random", "DataFrames", "CSV"])
 
 ### Simulate Neural Activity with Hemispheric Isolation ###
 # Creating a simulation of neural activity for two brain regions, introducing hemispheric isolation by reducing inter-regional connectivity.
