@@ -1,8 +1,8 @@
 # Simulating Neural Connectivity and Entropic Modulation: A BBCI Framework for Enhancing Hemispheric Integration in Autism Spectrum Disorder
 
 # Required libraries for project
-# using Pkg
-# Pkg.add(["Plots", "Flux", "Random", "DataFrames", "CSV"])
+using Pkg
+Pkg.add(["Plots", "Flux", "Random", "DataFrames", "CSV"])
 
 ### Simulate Neural Activity with Hemispheric Isolation ###
 # Creating a simulation of neural activity for two brain regions, introducing hemispheric isolation by reducing inter-regional connectivity.
@@ -55,6 +55,12 @@ intent_labels = vcat(ones(Int64, n_time_steps), 2 * ones(Int64, n_time_steps))  
 # Normalize data
 X_normalized = X ./ maximum(abs.(X))
 
+# Reshape data to match the expected input size for the neural network
+X_reshaped = reshape(X_normalized, n_neurons, 2 * n_time_steps)
+
+# Convert data to Float32 to match model parameters
+X_reshaped = Float32.(X_reshaped)
+
 # Define a simple neural network model
 model = Chain(
     Dense(n_neurons, 16, relu),  # First layer with 16 hidden units
@@ -63,17 +69,22 @@ model = Chain(
 )
 
 # Define loss function and optimizer
-loss_fn = Flux.logitcrossentropy
+loss_fn(x, y) = Flux.logitcrossentropy(model(x), y)
 optimizer = Descent(0.01)  # Gradient descent optimizer
 
 # Convert data to tensors
-X_tensor = hcat(eachcol(X_normalized)...)
+X_tensor = X_reshaped
 Y_tensor = Flux.onehotbatch(intent_labels, 1:2)
+
+# Initialize optimizer state
+opt_state = Flux.setup(optimizer, model)
 
 # Train the model
 for epoch in 1:100
-    grads = Flux.gradient(() -> loss_fn(model(X_tensor), Y_tensor), Flux.params(model))
-    Flux.Optimise.update!(optimizer, Flux.params(model), grads)
+    grads = Flux.gradient(Flux.trainable(model)) do
+        loss_fn(X_tensor, Y_tensor)
+    end
+    Flux.Optimise.update!(optimizer, opt_state, grads)
 end
 
 println("Model training complete.")
